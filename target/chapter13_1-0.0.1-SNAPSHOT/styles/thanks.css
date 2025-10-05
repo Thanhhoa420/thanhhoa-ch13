@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff9fb;
+  background-image: radial-gradient(circle at top left, #ffeaf3 0%, transparent 40%), 
+                    radial-gradient(circle at bottom right, #fde3ff 0%, transparent 40%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5a305a;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 25px;
+}
+
+.thank-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 22px;
+  padding: 45px 35px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255, 182, 217, 0.25);
+  border: 1px solid rgba(255, 200, 230, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: floatUp 0.9s ease-out;
+}
+
+/* Hoa pastel góc */
+.thank-box::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Line_flower_pink.svg') no-repeat center/contain;
+  opacity: 0.12;
+}
+
+.thank-box::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Line_flower_pink.svg') no-repeat center/contain;
+  opacity: 0.08;
+  transform: rotate(180deg);
+}
+
+/* Animation */
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.icon {
+  font-size: 70px;
+  margin-bottom: 25px;
+  color: #ff9ec6;
+  animation: pop 0.6s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #b85183;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 25px;
+  color: #835b7d;
+  font-style: italic;
+}
+
+.info {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.info .label {
+  font-weight: 600;
+  color: #9c4d82;
+}
+
+.info .value {
+  margin-left: 6px;
+  color: #d27ca7;
+}
+
+.note {
+  margin-bottom: 22px;
+  font-size: 14px;
+  color: #77546f;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.return-form button {
+  background: #ffd6e8;
+  color: #673d63;
+  border: none;
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.return-form button:hover {
+  background: #ffc6e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 153, 204, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .thank-box {
+    padding: 30px 22px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .icon {
+    font-size: 55px;
+  }
+}
